@@ -19,7 +19,7 @@ The first step is to create a crawler that can crawl some sample data and record
 
 1. Leave Amazon S3 as the data store\. Under **Crawl data in**, choose **Specified path in another account**\. Then in the **Include path** box, type `s3://awsglue-datasets/examples/us-legislators/all`\. Choose **Next**, and then choose **Next** again to confirm that you don't want to add another data store\. 
 
-1. Provide an IAM role for the crawler to assume when it runs, choose **Next**\. Then choose **Next** to confirm that this crawler will be run on demand\.
+1. Provide an IAM role for the crawler to assume when it runs, choose **Next**\. Then choose **Next** to confirm that this crawler will be run on demand\. Note that the AWS managed policy "AWSGlueServiceRole" grants access to `s3://aws-glue*`, you will need to create a policy that grants access to `s3://awsglue*`\.
 
 1. For **Database**, choose the `legislators` database\. Choose **Next**, and then choose **Finish** to complete the creation of the new crawler\.
 
